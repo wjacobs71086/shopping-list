@@ -1,21 +1,21 @@
 'use strict';
 
-switch($('js-shopping-list-form').val()){
-case 'apples':
-  console.log('apples');
-  // codeblock
-  break;
-case 'oranges':
-  // codeblock
-  break;
-case 'milk':
-  // codeblock
-  break;
-case 'bread':
-  // codeblock
-  break;
+function getValue(){
+  $('#js-shopping-list-form').submit(function( event ) {
+    if (typeof $('#shopping-list-entry').val() === 'string' ){
+      $('.shopping-item').closest('li').append($('#shopping-list-entry').val());
 
-default: 
-console.log($('shopping-list-entry').val());
-  // codeblock
+      console.log($('#shopping-list-entry').val());
+      event.preventDefault();
+    }
+  });
 }
+
+
+
+
+ 
+
+
+$(getValue());
+
